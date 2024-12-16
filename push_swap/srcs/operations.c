@@ -6,11 +6,12 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 16:10:16 by tat-nguy          #+#    #+#             */
-/*   Updated: 2024/12/15 18:39:50 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2024/12/16 16:16:20 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
+
 
 
 //swap: sa, sb
@@ -20,9 +21,10 @@ void	ft_swap(t_stack **head, char print)
 	
 }
 
+//push
 
 
-
+//rotate: ra, rb
 void	ft_rotate(t_stack **head, char print)
 {
 	t_stack	*temp;

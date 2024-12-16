@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 20:39:57 by tat-nguy          #+#    #+#             */
-/*   Updated: 2024/12/15 16:56:05 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2024/12/16 15:12:51 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <unistd.h>
+# include 
 
 typedef	struct s_stack
 {

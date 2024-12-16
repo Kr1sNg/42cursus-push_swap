@@ -6,9 +6,9 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 20:40:46 by tat-nguy          #+#    #+#             */
-/*   Updated: 2024/12/15 17:03:14 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2024/12/16 16:16:31 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
