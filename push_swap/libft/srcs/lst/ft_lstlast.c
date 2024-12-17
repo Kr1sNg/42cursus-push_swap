@@ -1,49 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/15 16:10:16 by tat-nguy          #+#    #+#             */
-/*   Updated: 2024/12/16 16:16:20 by tat-nguy         ###   ########.fr       */
+/*   Created: 2024/11/08 09:18:00 by tat-nguy          #+#    #+#             */
+/*   Updated: 2024/11/09 11:54:24 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+/*
+**	LIBRARY: N/A
+**	SYNOPSIS: return the last node of the list
+**
+**	RETURN VALUE:
+**	(Pointer to) the last node of the list.
+*/
 
+#include "../../includes/libft.h"
 
-
-//swap: sa, sb
-
-void	ft_swap(t_stack **head, char print)
+t_list	*ft_lstlast(t_list *lst)
 {
-	
-}
-
-//push
-
-
-//rotate: ra, rb
-void	ft_rotate(t_stack **head, char print)
-{
-	t_stack	*temp;
-	
-	if (!(*head) || !(*head)->next)
+	if (lst == NULL)
 		return (NULL);
-
-	temp = *head;
-	*head = ft_lstlast(*head);
-	(*head)->next = temp;
-	*head = temp->next;
-	temp->next = NULL;
-	if (print == 1)
-		write(1, "ra\n", 3);
-}
-
-void	ft_push(t_stack	*dest, t_stack *src)
-{
-	int	temp;
-	
-	
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

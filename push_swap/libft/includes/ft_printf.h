@@ -1,46 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/14 20:39:57 by tat-nguy          #+#    #+#             */
-/*   Updated: 2024/12/16 15:12:51 by tat-nguy         ###   ########.fr       */
+/*   Created: 2024/11/12 13:15:16 by tat-nguy          #+#    #+#             */
+/*   Updated: 2024/11/14 21:20:06 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 /*
 ** :::::::::::::::::::::::::::::::::* HEADERS *:::::::::::::::::::::::::::::: **
 */
 
-# include <unistd.h>
-# include "../libft/includes/libft.h"
-
-/*
-** :::::::::::::::::::::::::::* STRUCT DECLARATION *::::::::::::::::::::::::: **
-*/
-
-typedef	struct s_stack
-{
-	int	nbr;
-	int	index;
-	struct	s_stack	*next;
-	struct	s_stack	*prev;
-}	t_stack;
-
+# include <stdarg.h>
+# include "libft.h"
 
 /*
 ** ::::::::::::::::::::::::::* FUNCTION PROTOTYPES *::::::::::::::::::::::::: **
 */
 
-/*
-**	
-*/
-
-
+int		ft_printf(const char *mand_arg, ...);
+int		ft_print_format(char c, va_list ap);
+int		ft_print_char(int c);
+int		ft_print_str(char *str);
+int		ft_print_dec(long n);
+int		ft_print_hex(unsigned long long n, char c);
+int		ft_print_ptr(unsigned long long p);
 
 #endif
