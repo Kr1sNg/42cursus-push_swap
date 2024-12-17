@@ -19,6 +19,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include "ft_printf.h"
 
 /*
 ** :::::::::::::::::::::::::::* STRUCT DECLARATION *::::::::::::::::::::::::: **
