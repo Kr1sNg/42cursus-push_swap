@@ -26,7 +26,7 @@ OBJS		= $(subst $(DIR_SRCS), $(DIR_OBJS), $(SRCS:.c=.o))
 
 INCLUDES	= -I includes
 
-CC			= clang
+CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
 AR			= ar -rc
 RANLIB		= ranlib
