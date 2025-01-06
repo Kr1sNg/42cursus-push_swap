@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 16:10:16 by tat-nguy          #+#    #+#             */
-/*   Updated: 2024/12/16 16:16:20 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/01/04 17:36:13 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 
 
-//swap: sa, sb: swap the first 2 elements at the top (head of list) of stack
+//swap: sa, sb, ss: swap the first 2 elements at the top (head of list) of stack
 
 void	ft_swap_elem(t_stack **head, char print)
 {
@@ -23,10 +23,10 @@ void	ft_swap_elem(t_stack **head, char print)
 
 }
 
-//push
+//push: pa, pb: take the first element at the top of b/a and put it at the top of a /b
 
 
-//rotate: ra, rb
+//rotate: ra, rb, rr: shift up all element by 1. The first become the last
 void	ft_rotate(t_stack **head, char print)
 {
 	t_stack	*temp;
@@ -49,3 +49,5 @@ void	ft_push(t_stack	*dest, t_stack *src)
 	
 	
 }
+
+// rra, rrb, rrr: shift down all element by 1. The last become the first

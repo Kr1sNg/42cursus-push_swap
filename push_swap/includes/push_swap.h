@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 20:39:57 by tat-nguy          #+#    #+#             */
-/*   Updated: 2024/12/16 15:12:51 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/01/05 12:53:22 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,26 @@
 ** :::::::::::::::::::::::::::::::::* HEADERS *:::::::::::::::::::::::::::::: **
 */
 
-# include <unistd.h>
 # include "../libft/includes/libft.h"
+# include <stdbool.h>
+# include <limits.h>
 
 /*
 ** :::::::::::::::::::::::::::* STRUCT DECLARATION *::::::::::::::::::::::::: **
 */
 
-typedef	struct s_stack
+typedef	struct s_stack_node
 {
-	int	nbr;
-	int	index;
-	struct	s_stack	*next;
-	struct	s_stack	*prev;
-}	t_stack;
+	int		nbr;
+	int		index;
+	int 	push_cost;
+	bool	above_equator;
+	bool	cheapest;
+
+	struct s_stack_node *target_node;
+	struct s_stack_node	*next;
+	struct s_stack_node	*prev;
+}	t_stack_node;
 
 
 /*
@@ -38,9 +44,31 @@ typedef	struct s_stack
 */
 
 /*
-**	
+**	Handle errors
 */
 
+/*
+**	Stack initiation
+*/
 
+/*
+**	Node initiation
+*/
+
+/*
+**	Stack utils
+*/
+
+/*
+**	Operation commands
+*/
+
+/*
+**	Algorithms
+*/
+
+/*
+**	Other
+*/
 
 #endif

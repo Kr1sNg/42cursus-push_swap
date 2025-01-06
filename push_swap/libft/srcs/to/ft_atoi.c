@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:04:40 by tat-nguy          #+#    #+#             */
-/*   Updated: 2024/12/02 18:33:22 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/01/05 14:54:27 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,11 @@ int	ft_atoi(const char *nptr)
 /*
 #include <stdlib.h>
 #include <stdio.h>
-int main(void)
+int main(int argc, char **argv)
 {
-	char *str = "    2147483647";
-	printf("atoi: %i\n", atoi(str));
-	printf("ft_atoi: %i\n", ft_atoi(str));
+	if (argc != 2)
+		return (-42);
+	ft_printf("atoi: %i\n", atoi(argv[1]));
+	ft_printf("ft_atoi: %i\n", ft_atoi(argv[1]));
 }
 */
