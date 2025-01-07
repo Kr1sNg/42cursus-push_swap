@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 20:39:57 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/01/05 12:53:22 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/01/07 17:47:59 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,18 @@
 ** :::::::::::::::::::::::::::* STRUCT DECLARATION *::::::::::::::::::::::::: **
 */
 
-typedef	struct s_stack_node
+typedef	struct s_stack
 {
 	int		nbr;
 	int		index;
 	int 	push_cost;
-	bool	above_equator;
+	bool	above_median;
 	bool	cheapest;
 
-	struct s_stack_node *target_node;
-	struct s_stack_node	*next;
-	struct s_stack_node	*prev;
-}	t_stack_node;
+	struct s_stack *target_node;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+}	t_stack;
 
 
 /*

@@ -6,7 +6,7 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 20:40:46 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/01/05 23:44:58 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/01/07 15:40:00 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
-	char			**arrs;
+	t_stack	*a;
+	t_stack	*b;
+	char	**arrs;
 	
 	a = NULL;
 	b = NULL;
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 	}
 	else  //TO-CHECK if it works with my ft_split
 		init_stack_a(&a, argv + 1);
-	if (!stack_sorted(a)) //TODO // co the lam sort_main(&a, &b) roi check de vua 25 lines
+	if (!is_stack_sorted(a)) //TODO // co the lam sort_main(&a, &b) roi check de vua 25 lines
 	{	// do we need to check if len = 1?
 		if (stack_len(a) == 2) //TODO
 			sa(&a, false); //TODO
@@ -44,6 +44,5 @@ int	main(int argc, char **argv)
 		else
 			sort_stacks(&a, &b); //TODO
 	}
-	free_stack(&a);
-	return (0);
+	return (free_stack(&a), 0);
 }

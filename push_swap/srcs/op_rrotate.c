@@ -20,6 +20,14 @@ void	ft_swap_elem(t_stack **head, char print)
 {
 	t_stack *tmp;
 
+	tmp->next = (*head)->next;
+	tmp->prev = *head;
+	(*head)->next = tmp;
+	
+
+
+
+
 
 }
 
@@ -43,11 +51,16 @@ void	ft_rotate(t_stack **head, char print)
 		write(1, "ra\n", 3);
 }
 
-void	ft_push(t_stack	*dest, t_stack *src)
-{
-	int	temp;
+// void	ft_push(t_stack	*dest, t_stack *src)
+// {
+// 	int	temp;
 	
 	
-}
+// }
 
 // rra, rrb, rrr: shift down all element by 1. The last become the first
+
+int	main(void)
+{
+
+}
