@@ -6,11 +6,13 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 19:22:15 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/01/05 12:22:49 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/01/08 21:31:56 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
+**	NOTICE: Need to use ft_split_free() after using ft_split()
+**
 **	LIBRARY: N/A
 **	SYNOPSIS: separate a string into substrings delimited by a character
 **

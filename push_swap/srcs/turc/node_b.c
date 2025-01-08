@@ -6,11 +6,11 @@
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 22:26:24 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/01/07 20:03:49 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/01/08 18:39:38 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 static void set_target_b(t_stack *a, t_stack *b)
 {

@@ -1,55 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_push.c                                          :+:      :+:    :+:   */
+/*   1op_push.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 16:10:16 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/01/07 20:16:26 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/01/08 20:53:24 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 //push: pa, pb: take the first element at the top of b/a and put it at the top of a /b
-static void	push(t_stack **dest, t_stack **src)
+static void	push(t_stack **dest, t_stack **src) //OK
 {
 	t_stack	*push_node;
 	
 	if (!*src)
 		return ;
 	push_node = *src;
-	*src = (*src)
+	*src = (*src)->next;
+	if (*src)
+		(*src)->prev = NULL;
+	push_node->prev = NULL; //it always at the top of stack so ->prev always = 0
+	if (!*dest)
+	{
+		*dest = push_node;
+		push_node->next = NULL;
+	}
+	else
+	{
+		push_node->next = *dest;
+		push_node->next->prev = push_node;
+		*dest = push_node;
+	}
 }
 
-//rotate: ra, rb, rr: shift up all element by 1. The first become the last
-void	ft_rotate(t_stack **head, char print)
+void	pa(t_stack **a, t_stack **b, bool print) //checked
 {
-	t_stack	*temp;
-	
-	if (!(*head) || !(*head)->next)
-		return (NULL);
-
-	temp = *head;
-	*head = ft_lstlast(*head);
-	(*head)->next = temp;
-	*head = temp->next;
-	temp->next = NULL;
-	if (print == 1)
-		write(1, "ra\n", 3);
+	push(a, b);
+	if (print)
+		ft_printf("pa\n");
 }
 
-// void	ft_push(t_stack	*dest, t_stack *src)
-// {
-// 	int	temp;
-	
-	
-// }
-
-// rra, rrb, rrr: shift down all element by 1. The last become the first
-
-int	main(void)
+void	pb(t_stack **b, t_stack **a, bool print) //checked
 {
-
+	push(b, a);
+	if (print)
+		ft_printf("pb\n");
 }
+

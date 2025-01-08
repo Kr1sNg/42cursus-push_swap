@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node.c                                             :+:      :+:    :+:   */
+/*   node_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 22:26:24 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/01/07 19:30:56 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/01/08 19:44:40 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void    current_index(t_stack *stack)
 {
@@ -20,7 +20,7 @@ void    current_index(t_stack *stack)
     i = 0;
     if (!stack)
         return ;
-    median = stack_len(stack) / 2;
+    median = ft_stack_len(stack) / 2;
     while (stack)
     {
         stack->index = i;
@@ -60,18 +60,17 @@ static void set_target_a(t_stack *a, t_stack *b)
     }
 }
 
-static void cost_analysis_a(a, b)
+static void cost_analysis_a(t_stack *a, t_stack *b)
 {
     int len_a;
     int len_b;
     
-    len_a = stack_len(a);
-    len_b = stack_len(b);
+    len_a = ft_stack_len(a);
+    len_b = ft_stack_len(b);
     while (a)
     {
-        if (a->above_median)
-            a->push_cost = a->index;
-        else
+        a->push_cost = a->index;
+        if (!(a->above_median))
             a->push_cost = len_a - (a->index);
         if (a->target_node->above_median)
             a->push_cost += a->target_node->index;
@@ -81,7 +80,7 @@ static void cost_analysis_a(a, b)
     }
 }
 
-void    set_cheapest(t_stack *stack)
+static void    set_cheapest(t_stack *stack)
 {
     long    cheapest_value;
     t_stack *cheapest_node;
@@ -105,8 +104,8 @@ void    init_nodes_a(t_stack *a, t_stack *b)
 {
     current_index(a);
     current_index(b);
-    set_target_a(a, b); //TODO
-    cost_analysis_a(a, b); //TODO
+    set_target_a(a, b);
+    cost_analysis_a(a, b);
     set_cheapest(a);
 }
 
