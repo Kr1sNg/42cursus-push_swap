@@ -1,51 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   1op_rotate.c                                       :+:      :+:    :+:   */
+/*   op_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 16:10:16 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/01/08 20:49:44 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/01/09 17:31:03 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** sa: Swap the first 2 elems at the top of stack a
+** sb: Swap the first 2 elems at the top of stack b
+** 			Do nothing if there is only one or no elements
+** ss: sa and sb at the same time
+*/
+
 #include "../../includes/push_swap.h"
 
-//rotate: ra, rb, rr: shift up all element by 1. The first become the last
-
-static void	rotate(t_stack **head) //OK
+void	ft_swap(t_stack **head)
 {
-	t_stack	*tail;
-
 	if (!*head || !(*head)->next)
-		return;
-	tail = ft_stack_last(*head);
-	tail->next = *head;
+		return ;
 	*head = (*head)->next;
+	(*head)->prev->prev = *head;
+	(*head)->prev->next = (*head)->next;
+	if ((*head)->next)
+		(*head)->next->prev = (*head)->prev;
+	(*head)->next = (*head)->prev;
 	(*head)->prev = NULL;
-	tail->next->prev = tail;
-	tail->next->next = NULL;
 }
 
-void	ra(t_stack **a, bool print) //checked
+void	sa(t_stack **a, bool print)
 {
-	rotate(a);
+	ft_swap(a);
 	if (print)
-		ft_printf("ra\n");
+		ft_printf("sa\n");
 }
 
-void	rb(t_stack **b, bool print) //checked
+void	sb(t_stack **b, bool print)
 {
-	rotate(b);
+	ft_swap(b);
 	if (print)
-		ft_printf("rb\n");
+		ft_printf("sb\n");
 }
 
-void	rr(t_stack **a, t_stack **b, bool print) //checked
+void	ss(t_stack **a, t_stack **b, bool print)
 {
-	rotate(a);
-	rotate(b);
+	ft_swap(a);
+	ft_swap(b);
 	if (print)
-		ft_printf("rr\n");
+		ft_printf("ss\n");
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 22:25:45 by tat-nguy          #+#    #+#             */
-/*   Updated: 2025/01/08 18:54:12 by tat-nguy         ###   ########.fr       */
+/*   Updated: 2025/01/10 13:48:13 by tat-nguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-bool	is_stack_sorted(t_stack *stack)
+bool	ft_isstacksorted(t_stack *stack)
 {
 	if (!stack)
 		return (-42);
@@ -25,36 +25,66 @@ bool	is_stack_sorted(t_stack *stack)
 	return (true);
 }
 
-t_stack	*get_cheapest(t_stack *stack)
+int	ft_stack_size(t_stack *head)
+{
+	int	i;
+
+	if (!head)
+		return (0);
+	i = 0;
+	while (head != NULL)
+	{
+		head = head->next;
+		i++;
+	}
+	return (i);
+}
+
+t_stack	*ft_stack_last(t_stack *stack)
 {
 	if (!stack)
 		return (NULL);
-	while (stack)
-	{
-		if (stack->cheapest)
-			return (stack);
+	while (stack->next)
 		stack = stack->next;
-	}
-	return (NULL);
+	return (stack);
 }
 
-void	prep_for_push(t_stack **stack, t_stack *top_node, char stack_name)
+t_stack	*ft_stack_min(t_stack *stack)
 {
-	while (*stack != top_node)
+	long	min;
+	t_stack	*min_node;
+
+	if (!stack)
+		return (NULL);
+	min = LONG_MAX;
+	while (stack != NULL)
 	{
-		if (stack_name == 'a')
+		if (stack->nbr < min)
 		{
-			if (top_node->above_median)
-				ra(stack, true); //TODO
-			else
-				rra(stack, true); //TODO
+			min = stack->nbr;
+			min_node = stack;
 		}
-		else if (stack_name == 'b')
-		{
-			if (top_node->above_median)
-				rb(stack, true); //TODO
-			else
-				rrb(stack, true); //TODO
-		}
+		stack = stack->next;
 	}
+	return (min_node);
+}
+
+t_stack	*ft_stack_max(t_stack *stack)
+{
+	long	max;
+	t_stack	*max_node;
+
+	if (!stack)
+		return (NULL);
+	max = LONG_MIN;
+	while (stack != NULL)
+	{
+		if (stack->nbr > max)
+		{
+			max = stack->nbr;
+			max_node = stack;
+		}
+		stack = stack->next;
+	}
+	return (max_node);
 }

@@ -6,7 +6,7 @@
 #    By: tat-nguy <tat-nguy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 15:19:42 by tat-nguy          #+#    #+#              #
-#    Updated: 2024/11/09 12:15:16 by tat-nguy         ###   ########.fr        #
+#    Updated: 2025/01/09 21:57:00 by tat-nguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME		= libft.a
 
 DIR_SRCS	= srcs
 DIR_OBJS	= objs
-SUBDIRS		= is lst mem put str to ft_printf
+SUBDIRS		= is lst mem put str to ft_printf gnl
 
 # Paths and Files
 SRCS_DIRS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_SRCS)/, $(dir)))
