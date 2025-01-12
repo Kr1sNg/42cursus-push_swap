@@ -45,3 +45,4 @@ void	ft_node_init_b(t_stack *a, t_stack *b)
 	ft_node_set_index(b);
 	ft_set_target_node_b(a, b);
 }
+

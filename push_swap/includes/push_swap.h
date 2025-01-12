@@ -18,6 +18,7 @@
 */
 
 # include "../libft/includes/libft.h"
+# include "shared.h"
 # include <stdbool.h>
 # include <limits.h>
 
@@ -25,17 +26,17 @@
 ** :::::::::::::::::::::::::::* STRUCT DECLARATION *::::::::::::::::::::::::: **
 */
 
-typedef struct s_stack
-{
-	int				nbr;
-	int				index;
-	int				push_cost;
-	bool			above_median;
-	bool			cheapest;
-	struct s_stack	*target;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}	t_stack;
+// typedef struct s_stack
+// {
+// 	int				nbr;
+// 	int				index;
+// 	int				push_cost;
+// 	bool			above_median;
+// 	bool			cheapest;
+// 	struct s_stack	*target;
+// 	struct s_stack	*next;
+// 	struct s_stack	*prev;
+// }	t_stack;
 
 /*
 ** ::::::::::::::::::::::::::* FUNCTION PROTOTYPES *::::::::::::::::::::::::: **
@@ -66,10 +67,10 @@ void	ft_move_min_to_top(t_stack **a);
 **	error.c
 */
 
-int		ft_error_input(char *str);
-int		ft_error_dup(t_stack *a, int n);
-void	ft_stack_clear(t_stack **stack);
-void	ft_exit(t_stack **a);
+// int		ft_error_input(char *str);
+// int		ft_error_dup(t_stack *a, int n);
+// void	ft_stack_clear(t_stack **stack);
+// void	ft_exit(t_stack **a);
 
 /*
 **	Nodes handling
@@ -90,47 +91,47 @@ void	ft_node_init_b(t_stack *a, t_stack *b);
 **	stack_initation.c
 */
 
-void	ft_stack_add_back(t_stack **head, int nb);
-void	ft_stack_init(t_stack **stack, char **argv);
-t_stack	*ft_call_cheapest_node(t_stack *stack);
-void	ft_prep_push(t_stack **stack, t_stack *top_node, char stack_name);
+// void	ft_stack_add_back(t_stack **head, int nb);
+// void	ft_stack_init(t_stack **stack, char **argv);
+// t_stack	*ft_call_cheapest_node(t_stack *stack);
+// void	ft_prep_push(t_stack **stack, t_stack *top_node, char stack_name);
 
-/*
-**	Stack utils
-**	stack_utils.c
-*/
+// /*
+// **	Stack utils
+// **	stack_utils.c
+// */
 
-bool	ft_isstacksorted(t_stack *stack);
-int		ft_stack_size(t_stack *head);
-t_stack	*ft_stack_last(t_stack *stack);
-t_stack	*ft_stack_min(t_stack *stack);
-t_stack	*ft_stack_max(t_stack *stack);
+// bool	ft_isstacksorted(t_stack *stack);
+// int		ft_stack_size(t_stack *head);
+// t_stack	*ft_stack_last(t_stack *stack);
+// t_stack	*ft_stack_min(t_stack *stack);
+// t_stack	*ft_stack_max(t_stack *stack);
 
 /*
 **	Operation commands
 **	op_push.c op_rotate.c op_rrotate.c op_swap.c
 */
 
-void	sa(t_stack **a, bool print);
-void	sb(t_stack **b, bool print);
-void	ss(t_stack **a, t_stack **b, bool print);
-void	pa(t_stack **a, t_stack **b, bool print);
-void	pb(t_stack **a, t_stack **b, bool print);
-void	ra(t_stack **a, bool print);
-void	rb(t_stack **b, bool print);
-void	rr(t_stack **a, t_stack **b, bool print);
-void	rra(t_stack **a, bool print);
-void	rrb(t_stack **b, bool print);
-void	rrr(t_stack **a, t_stack **b, bool print);
+// void	sa(t_stack **a, bool print);
+// void	sb(t_stack **b, bool print);
+// void	ss(t_stack **a, t_stack **b, bool print);
+// void	pa(t_stack **a, t_stack **b, bool print);
+// void	pb(t_stack **b, t_stack **a, bool print);
+// void	ra(t_stack **a, bool print);
+// void	rb(t_stack **b, bool print);
+// void	rr(t_stack **a, t_stack **b, bool print);
+// void	rra(t_stack **a, bool print);
+// void	rrb(t_stack **b, bool print);
+// void	rrr(t_stack **a, t_stack **b, bool print);
 
-/*
-**	Operation utils
-**	op_push.c op_rotate.c op_rrotate.c op_swap.c
-*/
+// /*
+// **	Operation utils
+// **	op_push.c op_rotate.c op_rrotate.c op_swap.c
+// */
 
-void	ft_swap(t_stack **head);
-void	ft_push(t_stack **dest, t_stack **src);
-void	ft_rotate(t_stack **head);
-void	ft_rev_rotate(t_stack **head);
+// void	ft_swap(t_stack **head);
+// void	ft_push(t_stack **dest, t_stack **src);
+// void	ft_rotate(t_stack **head);
+// void	ft_rev_rotate(t_stack **head);
 
 #endif
