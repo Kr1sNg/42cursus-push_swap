@@ -15,11 +15,11 @@
 **	SYNOPSIS: compare two strings
 **
 **	DESCRIPTION:
-** 	The strncmp() function compares only the first (at most) 'n' bytes the two
-**	strings 's1' and 's2'. The comparison is done using unsigned characters.
+** 	The strcmp() function compares the two strings 's1' and 's2'.
+**	The comparison is done using unsigned characters.
 **
 **	RETURN VALUE:
-**	An integer less than, equal to, or greater than zero if the first 'n' bytes
+**	An integer less than, equal to, or greater than zero if the characters
 **	of 's1' is found, respectively, to be less than, to match, or be greater
 **	than 's2'.
 */
