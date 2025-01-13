@@ -25,6 +25,8 @@ void	ft_split_free(char **arrs)
 	size_t	i;
 
 	i = 0;
+	if (!arrs)
+		return ;
 	while (arrs[i] != NULL)
 	{
 		free(arrs[i]);
