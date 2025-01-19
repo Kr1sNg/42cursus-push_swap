@@ -53,7 +53,7 @@ ARG="<paste the list of random integers here>"; ./push_swap $ARG
 > - parameters including numbers greater than MAXINT or smaller than MININT
 > - etc
 
-To count how many instructions were returned, add pipex `wc -l` and run
+To count how many instructions were returned, add pipeline to `wc -l` and run
 ```
 ARG="<paste the list of random integers here>"; ./push_swap $ARG | wc -l
 ```
